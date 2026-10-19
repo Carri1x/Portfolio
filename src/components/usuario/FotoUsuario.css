@@ -1,0 +1,6 @@
+.foto-usuario {
+    width: clamp(18px, calc(12.8vw - 20px), 42px);
+    aspect-ratio: 1 / 1;  /* Fuerza a que sea un cuadrado perfecto */
+    object-fit: cover;    /* Recorta los bordes invisibles sobrantes y centra al personaje */
+    object-position: center top; /* Asegura que la cabeza no se corte si se reduce */
+}

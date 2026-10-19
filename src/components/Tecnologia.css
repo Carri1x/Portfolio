@@ -1,0 +1,7 @@
+.imgTecnologia {
+    height: 100px;
+}
+
+.hoverTecnologia {
+    border: oklch(from var(--azul-claro) calc(l + 0.15) c h);
+}

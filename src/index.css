@@ -1,3 +1,143 @@
 :root {
-    --color-primario: rgb(142, 225, 228);
+    --gris-claro: #949494;
+    --gris-medio: #3c3c3c;
+    --gris-oscuro: rgb(46, 46, 46);
+
+    --azul-claro: #3897F1;
+    --azul-medio: #1864ac;
+    --amarillo-claro: #f5ff47;
+
+    /* Tipografía fluida: min, preferido según el ancho de pantalla, máximo. */
+    --fs-sm: clamp(0.25rem, 0.75rem + 0.25vw, 0.9rem);
+    --fs-base: clamp(0.9rem, 0.95rem + 0.3vw, 1rem);
+    --fs-lg: clamp(1rem, 1.1rem + 0.6vw, 1.1rem);
+    --fs-xl: clamp(1.1rem, 1.3rem + 1.2vw, 1.4rem);
+
+    /* Tamaños de teléfono, tablet y PC*/
+    --size-telefono: 375px;
+    --size-tablet: 768px;
+    --size-pc-sm: 1024px;
+    --size-pc-md: 1900px;
+    --size-pc-lg: 2200px;
+    --size-pc-xl: 2900px;
+
+    /* Espaciado fluido, para paddings/márgenes que también se adapten. */
+    --space-sm: clamp(0.5rem, 0.4rem + 0.5vw, 0.85rem);
+    --space-md: clamp(1rem, 0.85rem + 0.75vw, 1.5rem);
+    --space-lg: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+
+    /* Tamaño de casilla del tablero de ajedrez: nunca menos de 30px (usable en el móvil
+    más pequeño) ni más de 75px (tamaño de escritorio original). Entre medias escala
+       con el ancho de la pantalla para que las 8 casillas siempre quepan sin scroll. */
+    --casilla-tablero: clamp(30px, calc(12.8vw - 9px), 75px);
+}
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    background-color: var(--gris-medio);
+
+    /*FUENTES*/
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: var(--fs-sm);
+}
+
+
+
+body {
+    margin: 0;
+    font-size: var(--fs-base);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+a{
+    color: var(--azul-claro);
+    padding: 2px 2px;
+    margin: 0px 8px;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    
+
+    text-decoration: none;
+    transition: color 0.5s ease;
+
+    position: relative; /* Obligatorio para posicionar el subrayado */
+    display: inline-block; /* Asegura que el ancho sea exacto al de la palabra */
+}
+
+
+a:link { /*Enlaces que no han sido visitados.*/
+    text-decoration: none;
+}
+
+a:visited { /*Enlaces que el usuario ya ha visitado.*/
+    color: var(--azul-medio);
+}
+
+a:hover { /*Cuando el cursor del ratón pasa por encima del enlace.*/
+    color: var(--amarillo-claro);
+}
+
+a:active { /*: El momento exacto en que se hace clic sobre el enlace.*/
+
+}
+
+/*---Hacer el subrayado en los enlaces---*/
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Grosor del subrayado */
+    bottom: -2px;
+    left: 0;
+    background-color: var(--amarillo-claro);
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.3s ease;
+}
+
+:hover::after {
+    transform: scaleX(1);
+}
+/*---Fin del subrayado---*/
+
+
+
+/* 2. Tablet / iPad (Desde 768px) */
+@media screen and (min-width:768px) {
+    html {
+        font-size: var(--fs-base);
+    }
+}
+/* 3. PC Normal (Desde 1024px) */
+@media (min-width: 1024px) {
+    html {
+        font-size: var(--fs-lg);
+    }
+}
+
+/* 4. PC Pantalla Grande (Desde 1900px) */
+@media (min-width: 1900px) {
+    html {
+        font-size: var(--fs-xl);
+    }
 }
