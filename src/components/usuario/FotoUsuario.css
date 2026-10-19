@@ -1,6 +1,24 @@
+.container-foto-usuario {
+    border: clamp(1px, 0.4vw, 2px) solid black ;
+    border-radius: 50%;
+    padding: clamp(1px, 1.2vw, 5px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 375px) {
+    .container-foto-usuario {
+        border-color: blue;
+        padding: 1px;
+    }
+}
+
+
 .foto-usuario {
     width: clamp(18px, calc(12.8vw - 20px), 42px);
     aspect-ratio: 1 / 1;  /* Fuerza a que sea un cuadrado perfecto */
     object-fit: cover;    /* Recorta los bordes invisibles sobrantes y centra al personaje */
     object-position: center top; /* Asegura que la cabeza no se corte si se reduce */
+    border-radius: 50%;
 }

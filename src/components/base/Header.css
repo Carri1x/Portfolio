@@ -1,4 +1,68 @@
-.container-header {
+header {
     display: flex;
     justify-content: right;
+     align-items: center; /* Centra verticalmente los elementos */
+    position: relative;  /* IMPORTANTE: Sirve de ancla para el menú desplegable móvil */
+    padding: 10px;       /* Un pequeño margen para que respire el contenido */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-hamburguesa {
+    display: none; /* Oculto por defecto en PC */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-hamburguesa span {
+    width: 100%;
+    height: 3px;
+    background-color: white; /* Color de las rayitas */
+    transition: all 0.3s ease;
+}
+
+
+/* --- RESPONSIVE: Modo Teléfono (Menos de 768px) --- */
+@media screen and (max-width: 400px) {
+    .menu-hamburguesa {
+        display: flex; /* Aparece el botón en móviles */
+    }
+
+    .nav-links {
+        display: none; /* Esconde los links por defecto en móvil */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Se despliega justo debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: #1e1e1e;
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+    }
+
+    /* Cuando React activa el estado, mostramos el menú */
+    .nav-links.abierto {
+        display: flex; 
+    }
+
+    /* Opcional: Animación para transformar las tres rayas en una "X" al abrir */
+    .menu-hamburguesa.activo span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .menu-hamburguesa.activo span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-hamburguesa.activo span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }

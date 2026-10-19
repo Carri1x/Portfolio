@@ -9,12 +9,15 @@ const FotoUsuario = () => {
 
     return (
         <>
-            <img 
+            <div className='container-foto-usuario'>
+                <img 
                 className='foto-usuario'
                 src={ usuario ? usuario.foto : iconoUsuario }
                 alt={usuario ? "Icono del usuario" : "Icono predeterminado de usuario."} 
                 draggable={false}
-            />
+                />
+            </div>
+            
         </>
     );
 };
