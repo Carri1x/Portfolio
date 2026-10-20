@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Proyecto.css';
+import './Proyecto.scss';
 
 const Proyecto = (props) => {
     const { nombre, imagen, descripcion, tecnologias, } = props.data;

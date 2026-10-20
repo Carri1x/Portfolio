@@ -1,4 +1,4 @@
-import './FotoUsuario.css';
+import './FotoUsuario.scss';
 import useUserApi from '../../hooks/useUserApi';
 import iconoUsuario from '/iconoUsuario.png';
 

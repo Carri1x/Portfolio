@@ -1,4 +1,5 @@
-import './App.css';
+import './App.scss';
+
 import Rutas from './router/Rutas.jsx';
 
 function App() {

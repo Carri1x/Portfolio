@@ -1,0 +1,56 @@
+.menu-hamburguesa {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+    color: $gris-claro;
+
+    width: clamp(20px, 2.5vw, 24px);
+    height: clamp(20px, 2.5vw, 24px);
+
+    svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: visible;
+    }
+
+    .linea {
+        // Definimos el centro de rotación por defecto para cada línea en su posición original
+        &:nth-child(1) {
+            transform-origin: 12px 6px;
+        }
+        &:nth-child(3) {
+            transform-origin: 12px 18px;
+        }
+
+        // La transición se aplica de forma global para que actúe al entrar y al salir suavemente
+        transition: transform 0.3s ease, opacity 0.3s ease, stroke 0.3s ease;
+    }
+}
+
+@media screen and (max-width: $size-tablet) {
+    .menu-hamburguesa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-hamburguesa.activo {
+        color: $amarillo-claro;
+
+        .linea-1 {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .linea-2 {
+            opacity: 0;
+        }
+
+        .linea-3 {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+    }
+}

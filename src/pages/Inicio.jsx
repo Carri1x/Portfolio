@@ -1,3 +1,5 @@
+import './Inicio.scss';
+
 import imagenAlvaro from '../assets/imagenCurriculumGrande.png';
 import Footer from '../components/base/Footer.jsx';
 import Header from '../components/base/Header.jsx';

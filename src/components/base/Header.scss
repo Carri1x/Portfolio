@@ -1,0 +1,47 @@
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: $space-md;
+    position: relative;
+    padding: 10px $space-md;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* --- RESPONSIVE: Tablet y Móvil --- */
+@media screen and (max-width: $size-tablet) {
+    header {
+        justify-content: space-between; // Separa la hamburguesa a la izquierda y el usuario a la derecha
+    }
+
+    .nav-links {
+        display: none; // Oculto por defecto en pantallas pequeñas
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba($gris-medio, 0.95);
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+
+        &.abierto {
+            display: flex; // Se muestra cuando el estado es true
+        }
+
+        a {
+            text-align: center;
+            width: 100%;
+            padding: 8px 0;
+        }
+    }
+}

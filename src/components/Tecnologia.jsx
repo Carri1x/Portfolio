@@ -1,3 +1,4 @@
+import './Tecnologia.scss';
 
 const Tecnologia = (props) => {
     const { nombre, imagen, detalles } = props.data;
