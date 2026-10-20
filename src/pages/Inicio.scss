@@ -1,0 +1,99 @@
+/* Fondo general si aplica a la sección */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    overflow-x: hidden; // Evita barras de desplazamiento horizontal si algo sobresale
+}
+
+/* Contenedor que agrupa la foto y el texto para permitir la superposición */
+.hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+/* Estilo para la imagen (con tus valores personalizados) */
+.imagen-alvaro {
+    max-width: 100px; // Un poco más pequeña en móvil para que encaje mejor
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 1;
+    position: relative;
+    z-index: 1; // Se queda por debajo del texto
+
+    @media (min-width: $size-tablet) {
+       // max-width: 300px; // Tamaño en pantallas grandes
+        max-width: 300px;
+        opacity: 0.77;
+    }
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2; // Se coloca por encima de la imagen
+    margin-top: -55px; // Ajusta este valor negativo si quieres subir o bajar las letras sobre la foto
+    text-align: center;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    padding: 20px 1rem;
+    background-color: rgba($gris-medio, $alpha: 0.5);
+    //backdrop-filter: blur(8px);
+
+    background: linear-gradient(
+        to bottom,
+        rgba($gris-medio, 0) 0%,         
+        rgba($gris-medio, 0.8) 10%,      
+        rgba($gris-medio, 0.8) 75%,      
+        rgba($gris-medio, 0) 100%        
+    );
+
+    /* "Software Developer" (Texto superior en tono amarillo verdoso) */
+    .rol-destacado {
+        display: block;
+        color: $amarillo-claro;
+        /* Usa clamp: mínimo de 1.5rem, escala con la pantalla (4vw), máximo de 2.8rem */
+        font-size: clamp(1.5rem, 4vw, 2.8rem);
+        font-weight: 100;
+        line-height: 1.1;
+        margin-bottom: 0.2rem;
+        letter-spacing: 0.02em;
+    }
+
+    /* "Álvaro Carrión Romero" (Texto principal en blanco) */
+    .nombre-principal {
+        color: #ffffff;
+        /* Usamos clamp para que en móvil sea más pequeño (1.8rem) y en PC crezca hasta 3.8rem de forma fluida */
+        font-size: clamp(1.8rem, 5.5vw, 3.8rem);
+        line-height: 1.1;
+        margin: 0.2rem 0 0 0;
+        font-weight: 100;
+        letter-spacing: 0.08em;
+
+        display: inline-block;
+        max-width: 100%;
+    }
+
+    /* "Especializado en desarrollo..." / Tu Descripción */
+    .descripcion-subtitulo {
+        color: #a0a0a0;
+        font-size: clamp(0.55rem, 2vw, 0.8rem);
+        font-weight: 400;
+        margin-top: 1.02rem;
+        letter-spacing: 0.07em;
+        padding: 0 0.5rem;
+    }
+}
+
+
+@media screen and (max-width: $size-telefono) {
+    .hero-container{
+        margin-top: -35px;
+    }
+}

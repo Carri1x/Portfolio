@@ -2,7 +2,9 @@
 const Footer = () => {
     return (
         <>
-            <small>Derechos reservados para Álvaro Carrión &copy; 2026 </small>
+            <footer>
+                <small>Derechos reservados para Álvaro Carrión &copy; 2026 </small>
+            </footer>
         </>
     );
 };

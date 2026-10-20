@@ -8,10 +8,10 @@ $azul-medio: #1864ac;
 $amarillo-claro: #f5ff47;
 
 // Tipografía fluida (min, preferido según el ancho de pantalla, máximo)
-$fs-sm: clamp(0.25rem, 0.75rem + 0.25vw, 0.9rem);
-$fs-base: clamp(0.9rem, 0.95rem + 0.3vw, 1rem);
-$fs-lg: clamp(1rem, 1.1rem + 0.6vw, 1.1rem);
-$fs-xl: clamp(1.1rem, 1.3rem + 1.2vw, 1.4rem);
+$fs-sm: clamp(0.25rem, 0.75rem + 0.25vw, 0.8rem);
+$fs-base: clamp(0.8rem, 0.95rem + 0.3vw, 0.9rem);
+$fs-lg: clamp(0.9rem, 1.1rem + 0.6vw, 1rem);
+$fs-xl: clamp(1rem, 1.3rem + 1.2vw, 1.2rem);
 
 // Tamaños de teléfono, tablet y PC (Breakpoints)
 $size-telefono: 375px;
