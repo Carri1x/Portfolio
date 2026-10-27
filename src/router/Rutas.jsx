@@ -4,6 +4,7 @@ import Inicio from '../pages/Inicio.jsx';
 import PaginaJuegos from "../pages/PaginaJuegos.jsx";
 import PaginaProyectos from "../pages/PaginaProyectos.jsx";
 import PaginaAbout from "../pages/PaginaAbout.jsx";
+import PerfilUsuario from "../components/usuario/PerfilUsuario.jsx";
 
 const Rutas = () => {
 
@@ -15,6 +16,7 @@ const Rutas = () => {
             <Route path="/juegos" element={<PaginaJuegos/>}/>
             <Route path="/proyectos" element={<PaginaProyectos/>}/>
             <Route path="/juegos" element={<PaginaJuegos/>}/>
+            <Route path="/perfil" element={<PerfilUsuario/>}/>
         </Routes>
     )
 }

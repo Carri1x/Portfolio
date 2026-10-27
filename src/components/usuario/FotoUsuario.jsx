@@ -1,24 +1,24 @@
 import './FotoUsuario.scss';
 import useUserApi from '../../hooks/useUserApi';
-import iconoUsuario from '/iconoUsuario.png';
+import IconoUsuario from '../base/IconoUsuario.jsx';
 
 const FotoUsuario = () => {
-    const {
-        usuario
-    } = useUserApi();
+    const { usuario } = useUserApi();
 
     return (
-        <>
-            <div className='container-foto-usuario'>
-                <img 
-                className='foto-usuario'
-                src={ usuario ? usuario.foto : iconoUsuario }
-                alt={usuario ? "Icono del usuario" : "Icono predeterminado de usuario."} 
-                draggable={false}
-                />
-            </div>
-            
-        </>
+        <div className='container-foto-usuario'>
+            {
+                usuario?.foto ?
+                    <img
+                        className='foto-usuario'
+                        src={usuario.foto} // Corrección de la lógica de renderizado
+                        alt="Foto del usuario"
+                        draggable={false}
+                    /> :
+                    /* El SVG heredará de forma responsiva el tamaño que le des a .container-foto-usuario en CSS */
+                    <IconoUsuario /> 
+            }
+        </div>
     );
 };
 

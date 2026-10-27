@@ -8,7 +8,15 @@ export const obtenerUsuarioByCookie = () => {
     if(!cookie) return;
     try {
         return obtenerUsuario(cookie);
-    } catch {
-        return;
+    } catch (error){
+        return error;
+    }
+}
+
+export const obtenerNombrePredeterminado = () => {
+    try {
+        return get(`${BASE_URL}/nombre-predeterminado`);
+    } catch (error) {
+        return error;
     }
 }

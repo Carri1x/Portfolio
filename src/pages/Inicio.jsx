@@ -1,15 +1,13 @@
 import './Inicio.scss';
 
 import imagenAlvaro from '../assets/imagenCurriculumGrande.png';
-import Footer from '../components/base/Footer.jsx';
-import Header from '../components/base/Header.jsx';
 import Contenido from '../components/Contenido.jsx';
+import Layout from '../components/base/Layout.jsx';
 
 const Inicio = () => {
-    return(
+    return (
         <>
-            <Header />
-            <main className="inicio-main">
+            <Layout>
                 {/* Contenedor padre para controlar la superposición */}
                 <div className="hero-section">
                     <img src={imagenAlvaro} className='imagen-alvaro' alt="Álvaro Carrión Romero" />
@@ -20,8 +18,7 @@ const Inicio = () => {
                     </div>
                 </div>
                 <Contenido />
-                <Footer />
-            </main> 
+            </Layout>
         </>
     )
 }

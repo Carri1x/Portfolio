@@ -1,0 +1,42 @@
+.main-perfil-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; // <-- ¡Cambiado a flex-start para que empiece arriba!
+    padding: 4rem 1.5rem;        // Un buen respiro superior debajo del header
+    gap: 1.25rem;
+
+    div:first-of-type{
+        align-self: center;
+        width: 200px;
+        height: 200px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nombre-usuario {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    .usuario-info {
+        display: flex;
+        flex-direction: column;
+        align-items:flex-end;
+        justify-content: center;
+
+        .email-texto {
+            opacity: 0.8;
+        }
+
+        .btn-registro {
+            cursor: pointer;
+            color: $azul-claro;
+            text-decoration: underline;
+            font-size: 0.7rem;
+
+            &:hover {
+                opacity: 0.85;
+            }
+        }
+    }
+}

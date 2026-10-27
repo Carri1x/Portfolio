@@ -1,5 +1,7 @@
-import { useState } from "react";
 import './Proyecto.scss';
+import { useState } from "react";
+
+import Tecnologia from './Tecnologia.jsx';
 
 const Proyecto = (props) => {
     const { nombre, imagen, descripcion, tecnologias, } = props.data;

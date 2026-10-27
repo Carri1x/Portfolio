@@ -1,9 +1,11 @@
+import Header from "../components/base/Header.jsx";
 
 const PaginaAbout = () => {
 
     return (
         <>
-            <p>pagina about</p>
+            <Header />
+            
         </>
     );
 };

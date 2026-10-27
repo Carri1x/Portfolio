@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { 
     obtenerTecnologias, 
     obtenerProyectos,
@@ -25,6 +25,11 @@ const useContenido = () => {
         } catch {
             console.log("Ha habído un error intentado cargar los proyectos.");
         }
+    }, []);
+
+    useEffect(() => {
+        cargarProyectos();
+        cargarTecnologias();
     }, []);
 
     return {

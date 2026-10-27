@@ -1,0 +1,124 @@
+.usuario-menu-container {
+    position: relative; // Obligatorio para referenciar el menú flotante
+    display: inline-block;
+}
+
+.usuario-boton-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    outline: none;
+
+    &:hover {
+        opacity: 0.85;
+    }
+}
+.usuario-desplegable {
+    position: absolute;
+    top: calc(100% + 10px); 
+    right: 0; 
+    background-color: $gris-medio; 
+    border: 1px solid rgba($color: $azul-claro, $alpha: 1.0);
+    border-radius: 8px;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+    z-index: 1000; 
+    padding: 12px 0;
+    animation: aparecerDesplegable 0.2s ease-out;
+
+    .usuario-info-cabecera {
+        padding: 4px 16px 8px 16px;
+        display: flex;
+        flex-direction: column;
+
+        .usuario-nombre {
+            color: $blanco-roto;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .usuario-email {
+            color: #aaaaaa;
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+    }
+
+    .usuario-divisor {
+        border: 0;
+        border-top: 1px solid #444444;
+        margin: 8px 0;
+    }
+
+    .usuario-opciones-lista {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            a,
+            button {
+                width: 100%;
+                padding: 10px 16px;
+                margin: 0; /* Anula el margin: 0 8px global de los enlaces */
+                display: block;
+                background: none;
+                border: none;
+                text-align: left;
+                color: #dddddd;
+                font-size: 0.9rem;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background 0.2s;
+                position: relative; /* Asegura el contexto para el subrayado interno */
+
+                &:hover {
+                    color: $amarillo-claro; // Usamos tu variable de acento
+                }
+
+                /* Controlamos el subrayado global heredado para que no rompa el diseño */
+                &::after {
+                    width: calc(100% - 32px); /* Se adapta restando el padding de los lados (16px + 16px) */
+                    left: 16px; /* Lo alinea perfectamente donde empieza el texto */
+                    bottom: 4px; /* Lo sube ligeramente para que no toque el borde del li */
+                }
+                
+                /* Mantenemos el comportamiento del estado activo que configuramos antes */
+                a:active &::after {
+                    background-color: $azul-medio;
+                }
+            }
+
+            &.opcion-logout button {
+                color: #ff4d4d; 
+
+                &:hover {
+                    background-color: rgba(255, 77, 77, 0.1);
+                    color: #ff4d4d;
+                }
+                
+                /* Quitamos el subrayado heredado solo en el botón de cerrar sesión */
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+// Animación suave de entrada
+@keyframes aparecerDesplegable {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

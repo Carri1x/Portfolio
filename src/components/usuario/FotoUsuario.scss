@@ -1,15 +1,15 @@
 .container-foto-usuario {
-    border: clamp(1px, 0.4vw, 2px) solid black ;
+    width: clamp(10px, 15vw, 20px); 
+    height: clamp(10px, 15vw, 20px);
     border-radius: 50%;
-    padding: 1px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 375px) {
     .container-foto-usuario {
-        border-color: blue;
         padding: 1px;
     }
 }

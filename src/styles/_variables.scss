@@ -1,4 +1,5 @@
 // Colores
+$blanco-roto: #d3cbbe;
 $gris-claro: #949494;
 $gris-medio: #3c3c3c;
 $gris-oscuro: rgb(46, 46, 46);
@@ -14,7 +15,7 @@ $fs-lg: clamp(0.9rem, 1.1rem + 0.6vw, 1rem);
 $fs-xl: clamp(1rem, 1.3rem + 1.2vw, 1.2rem);
 
 // Tamaños de teléfono, tablet y PC (Breakpoints)
-$size-telefono: 375px;
+$size-telefono: 450px;
 $size-tablet: 768px;
 $size-pc-sm: 1024px;
 $size-pc-md: 1900px;
